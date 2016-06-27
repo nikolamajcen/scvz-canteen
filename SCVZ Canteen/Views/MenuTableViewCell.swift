@@ -1,5 +1,5 @@
 //
-//  MealTableViewCell.swift
+//  MenuTableViewCell.swift
 //  SCVZ Canteen
 //
 //  Created by Nikola Majcen on 27/06/16.
@@ -7,29 +7,26 @@
 //
 
 import UIKit
+import ChameleonFramework
 
-class MealTableViewCell: UITableViewCell {
+class MenuTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var mealTitle: UILabel!
     @IBOutlet weak var mealDescription: UITextView!
-    
-    override func layoutSubviews() {
-        self.initializeUI()
-    }
-    
-    private func initializeUI() {
-        self.cardView.layer.cornerRadius = 8
-        self.cardView.layer.borderWidth = 4
-        self.cardView.layer.borderColor = UIColor.lightTextColor().CGColor
-    }
     
     func configureCell(meal: Meal) {
         self.mealImage.image = UIImage(named: meal.icon!)
         self.mealTitle.text = meal.name
         self.mealDescription.text = meal.items!.joinWithSeparator(", ")
         
-        // TODO: Change card color by type
+        self.backgroundColor = UIColor(averageColorFromImage: self.mealImage.image)
+        
+        // TODO: Need to remove (images won't have white space)
+        formatMealImage(self.mealImage)
+    }
+    
+    private func formatMealImage(image: UIImageView) {
+        image.layer.cornerRadius = image.bounds.height / 2
     }
 }
