@@ -10,8 +10,7 @@ import Foundation
 
 class Meal {
     
-    var icon: String?
-    var type: String?
-    var name: String?
+    var icon: Icon?
+    var title: String?
     var items: [String]?
 }

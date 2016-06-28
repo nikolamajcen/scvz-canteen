@@ -108,12 +108,12 @@ class MenuViewController: UIViewController {
         let items = ["Soup", "Spaghetti Bolognese", "Apple", "Orange", "Nectar Juice"]
         let name = "Menu X"
         
-        let icons = ["Rice", "Broccoli", "Sausage", "Pepper", "Pizza"]
+        let icons = [Icon.Rice, Icon.Barbecue, Icon.Fish, Icon.Broccoli, Icon.Burger]
         
-        for icon:String in icons {
+        for icon:Icon in icons {
             let meal = Meal()
             meal.icon = icon
-            meal.name = name
+            meal.title = name
             meal.items = items
             menu.lunch?.append(meal)
         }
