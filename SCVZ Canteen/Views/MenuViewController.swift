@@ -23,7 +23,11 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var menuTable: UITableView!
     
-    var menu = Menu()
+    var canteenStore = CanteenStore()
+    var menus = [Menu]()
+    
+    var selectedMenu: Menu?
+    var selectedMeals: [Meal]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,44 +38,46 @@ class MenuViewController: UIViewController {
         self.initializeUI()
         self.initializeControls()
         
-        // Example data
-        self.dateLabel.text = "28.06.2016."
-        
-        self.menu.lunch = []
-        self.createExampleMenu()
-        self.menuTable.reloadData()
+        self.canteenStore.fetchData { (result, error) in
+            if result != nil {
+                self.menus = result
+                self.selectedMenu = result.first
+                self.selectedMeals = self.selectedMenu?.lunch
+                self.menuTable.reloadData()
+            }
+        }
     }
     
     @IBAction func showLunchMenu(sender: UIButton) {
-        changeMenuImage(sender)
         changeButtonFocus(sender)
+        changeSelectedMeals(sender)
     }
     
     @IBAction func showDinnerMenu(sender: UIButton) {
-        changeMenuImage(sender)
         changeButtonFocus(sender)
+        changeSelectedMeals(sender)
     }
     
     private func initializeUI() {
-        self.navigationController!.navigationBar.shadowImage = UIImage()
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        self.navigationController!.navigationBar.translucent = false
+        navigationController!.navigationBar.shadowImage = UIImage()
+        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController!.navigationBar.translucent = false
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.flatSandColorDark()
-        self.navigationController?.navigationBar.tintColor = UIColor.flatCoffeeColorDark()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.flatCoffeeColorDark()]
+        navigationController?.navigationBar.barTintColor = UIColor.flatSandColorDark()
+        navigationController?.navigationBar.tintColor = UIColor.flatCoffeeColorDark()
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.flatCoffeeColorDark()]
         
         changeButtonImageTintColor(previousDayButton, color: UIColor.flatCoffeeColorDark())
         changeButtonImageTintColor(nextDayButton, color: UIColor.flatCoffeeColorDark())
         
-        self.dateLabel.textColor = UIColor.flatCoffeeColorDark()
-        self.headerView.backgroundColor = UIColor.flatSandColorDark()
-        self.menuTable.backgroundColor = UIColor.flatCoffeeColor()
+        dateLabel.textColor = UIColor.flatCoffeeColorDark()
+        headerView.backgroundColor = UIColor.flatSandColorDark()
+        menuTable.backgroundColor = UIColor.flatCoffeeColor()
     }
     
     private func initializeControls() {
-        changeMenuImage(lunchButton)
         changeButtonFocus(lunchButton)
+        changeSelectedMeals(lunchButton)
     }
     
     private func changeButtonImageTintColor(button: UIButton, color: UIColor) {
@@ -81,41 +87,32 @@ class MenuViewController: UIViewController {
         button.tintColor = color
     }
     
-    private func changeMenuImage(button: UIButton) {
-        switch button {
-        case lunchButton:
-            self.menuImage.image = UIImage(named: "Lunch")
-            break
-        case dinnerButton:
-            self.menuImage.image = UIImage(named: "Dinner")
-            break
-        default:
-            break
-        }
-    }
-    
     private func changeButtonFocus(button: UIButton) {
         if button.backgroundColor == UIColor.flatCoffeeColor() {
             return
         }
         
-        self.lunchButton.backgroundColor = UIColor.flatCoffeeColorDark()
-        self.dinnerButton.backgroundColor = UIColor.flatCoffeeColorDark()
+        lunchButton.backgroundColor = UIColor.flatCoffeeColorDark()
+        dinnerButton.backgroundColor = UIColor.flatCoffeeColorDark()
         button.backgroundColor = UIColor.flatCoffeeColor()
     }
     
-    private func createExampleMenu() {
-        let items = ["Soup", "Spaghetti Bolognese", "Apple", "Orange", "Nectar Juice"]
-        let name = "Menu X"
+    private func changeSelectedMeals(button: UIButton) {
+        switch button {
+        case lunchButton:
+            menuImage.image = UIImage(named: "Lunch")
+            selectedMeals = selectedMenu?.lunch
+            break
+        case dinnerButton:
+            menuImage.image = UIImage(named: "Dinner")
+            selectedMeals = selectedMenu?.dinner
+            break
+        default:
+            break
+        }
         
-        let icons = [Icon.Rice, Icon.Barbecue, Icon.Fish, Icon.Broccoli, Icon.Burger]
-        
-        for icon:Icon in icons {
-            let meal = Meal()
-            meal.icon = icon
-            meal.title = name
-            meal.items = items
-            menu.lunch?.append(meal)
+        if selectedMeals?.count > 0 {
+            menuTable.reloadData()
         }
     }
 }
@@ -125,15 +122,12 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MenuTableViewCell",
                                                                forIndexPath: indexPath) as! MenuTableViewCell
-        cell.configureCell(menu.lunch![indexPath.row])
+        cell.configureCell(selectedMeals![indexPath.row])
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let lunch = menu.lunch else {
-            return 0
-        }
-        return lunch.count
+        return (selectedMeals?.count)!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -7,10 +7,21 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Menu {
+class Menu: Mappable {
     
+    var id: Int?
     var date: String?
     var lunch: [Meal]?
     var dinner: [Meal]?
+    
+    required init?(_ map: Map) { }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        date <- map["date"]
+        lunch <- map["meals.lunch"]
+        dinner <- map["meals.dinner"]
+    }
 }

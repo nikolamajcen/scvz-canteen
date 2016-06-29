@@ -16,6 +16,8 @@
 		4FC6CCCC1D21263B00410829 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6CCCB1D21263B00410829 /* Menu.swift */; };
 		4FC6CCD01D2127F100410829 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6CCCF1D2127F100410829 /* Meal.swift */; };
 		4FC6CCD41D212EE000410829 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6CCD31D212EE000410829 /* MenuTableViewCell.swift */; };
+		4FFF79121D23EE4000E011E5 /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFF79111D23EE4000E011E5 /* example.json */; };
+		4FFF79151D23EF0E00E011E5 /* CanteenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF79141D23EF0E00E011E5 /* CanteenStore.swift */; };
 		60764CF4BF5AC5FEEEC9684C /* Pods_SCVZ_Canteen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5937D70A7690B40E66924C /* Pods_SCVZ_Canteen.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		4FC6CCCB1D21263B00410829 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		4FC6CCCF1D2127F100410829 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		4FC6CCD31D212EE000410829 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		4FFF79111D23EE4000E011E5 /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
+		4FFF79141D23EF0E00E011E5 /* CanteenStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanteenStore.swift; sourceTree = "<group>"; };
 		6F5937D70A7690B40E66924C /* Pods_SCVZ_Canteen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCVZ_Canteen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BFF18183897494534300E6 /* Pods-SCVZ Canteen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCVZ Canteen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SCVZ Canteen/Pods-SCVZ Canteen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,10 +75,12 @@
 			children = (
 				4FC6CCC81D211EFC00410829 /* Application */,
 				4FC6CCCA1D2125F800410829 /* Models */,
+				4FFF79131D23EED000E011E5 /* Stores */,
 				4FC6CCC91D211F0300410829 /* Views */,
 				4FC6CCBD1D211EDE00410829 /* Assets.xcassets */,
 				4FC6CCBA1D211EDE00410829 /* Main.storyboard */,
 				4FC6CCBF1D211EDE00410829 /* LaunchScreen.storyboard */,
+				4FFF79111D23EE4000E011E5 /* example.json */,
 			);
 			path = "SCVZ Canteen";
 			sourceTree = "<group>";
@@ -105,6 +111,14 @@
 				4F04CE951D231EA6003EE245 /* Icon.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4FFF79131D23EED000E011E5 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				4FFF79141D23EF0E00E011E5 /* CanteenStore.swift */,
+			);
+			path = Stores;
 			sourceTree = "<group>";
 		};
 		B1666658FEB1BD583DEE6DCF /* Frameworks */ = {
@@ -185,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FFF79121D23EE4000E011E5 /* example.json in Resources */,
 				4FC6CCC11D211EDE00410829 /* LaunchScreen.storyboard in Resources */,
 				4FC6CCBE1D211EDE00410829 /* Assets.xcassets in Resources */,
 				4FC6CCBC1D211EDE00410829 /* Main.storyboard in Resources */,
@@ -251,6 +266,7 @@
 				4FC6CCB91D211EDE00410829 /* MenuViewController.swift in Sources */,
 				4FC6CCD01D2127F100410829 /* Meal.swift in Sources */,
 				4FC6CCB71D211EDE00410829 /* AppDelegate.swift in Sources */,
+				4FFF79151D23EF0E00E011E5 /* CanteenStore.swift in Sources */,
 				4FC6CCD41D212EE000410829 /* MenuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

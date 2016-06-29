@@ -7,10 +7,19 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Meal {
+class Meal: Mappable {
     
     var icon: Icon?
     var title: String?
     var items: [String]?
+    
+    required init?(_ map: Map) { }
+    
+    func mapping(map: Map) {
+        icon <- map["icon"]
+        title <- map["title"]
+        items <- map["items"]
+    }
 }
