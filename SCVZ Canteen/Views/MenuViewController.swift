@@ -42,9 +42,27 @@ class MenuViewController: UIViewController {
             if result != nil {
                 self.menus = result
                 self.selectedMenu = result.first
+                self.dateLabel.text = self.selectedMenu?.date
                 self.selectedMeals = self.selectedMenu?.lunch
                 self.menuTable.reloadData()
+                self.updateHeaderNavigation()
             }
+        }
+    }
+    
+    @IBAction func showPreviousDayMenu(sender: UIButton) {
+        if selectedMenu!.id > 0 {
+            selectedMenu = menus[(selectedMenu?.id)! - 1]
+            updateHeaderNavigation()
+            updateTableContent()
+        }
+    }
+    
+    @IBAction func showNextDayMenu(sender: UIButton) {
+        if selectedMenu!.id < menus.count {
+            selectedMenu = menus[(selectedMenu?.id)! + 1]
+            updateHeaderNavigation()
+            updateTableContent()
         }
     }
     
@@ -78,6 +96,11 @@ class MenuViewController: UIViewController {
     private func initializeControls() {
         changeButtonFocus(lunchButton)
         changeSelectedMeals(lunchButton)
+        
+        dateLabel.text = ""
+        
+        previousDayButton.hidden = true
+        nextDayButton.hidden = true
     }
     
     private func changeButtonImageTintColor(button: UIButton, color: UIColor) {
@@ -113,7 +136,35 @@ class MenuViewController: UIViewController {
         
         if selectedMeals?.count > 0 {
             menuTable.reloadData()
+            menuTable.setContentOffset(CGPointZero, animated: true)
         }
+    }
+    
+    private func updateHeaderNavigation() {
+        dateLabel.text = selectedMenu?.date
+        if menus.count <= 1 {
+            previousDayButton.hidden = true
+            nextDayButton.hidden = true
+            return
+        }
+        
+        if menus.first?.id == selectedMenu?.id {
+            previousDayButton.hidden = true
+            nextDayButton.hidden = false
+        } else {
+            previousDayButton.hidden = false
+            nextDayButton.hidden = selectedMenu?.id == (menus.count - 1)
+        }
+    }
+    
+    private func updateTableContent() {
+        if lunchButton.backgroundColor == UIColor.flatCoffeeColor() {
+            selectedMeals = selectedMenu?.lunch
+        } else {
+            selectedMeals = selectedMenu?.dinner
+        }
+        menuTable.reloadData()
+        menuTable.setContentOffset(CGPointZero, animated: true)
     }
 }
 

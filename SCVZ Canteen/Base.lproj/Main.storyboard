@@ -32,6 +32,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kls-5E-C1W" userLabel="Next">
                                         <rect key="frame" x="530" y="40" width="40" height="40"/>
                                         <state key="normal" image="Next"/>
+                                        <connections>
+                                            <action selector="showNextDayMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="37d-V1-VZi"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SGQ-ZG-8yX">
                                         <rect key="frame" x="260" y="2" width="80" height="80"/>
@@ -43,6 +46,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-uO-4S1" userLabel="Previus">
                                         <rect key="frame" x="30" y="40" width="40" height="40"/>
                                         <state key="normal" image="Previous"/>
+                                        <connections>
+                                            <action selector="showPreviousDayMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q1D-EG-6us"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
