@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F04CE961D231EA6003EE245 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F04CE951D231EA6003EE245 /* Icon.swift */; };
+		4F4547DA1D242A7E00EFF576 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4547D91D242A7E00EFF576 /* SettingsViewController.swift */; };
 		4FC6CCB71D211EDE00410829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6CCB61D211EDE00410829 /* AppDelegate.swift */; };
 		4FC6CCB91D211EDE00410829 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6CCB81D211EDE00410829 /* MenuViewController.swift */; };
 		4FC6CCBC1D211EDE00410829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6CCBA1D211EDE00410829 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		4E3DF5A4FD66662296A5DFD1 /* Pods-SCVZ Canteen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCVZ Canteen.release.xcconfig"; path = "Pods/Target Support Files/Pods-SCVZ Canteen/Pods-SCVZ Canteen.release.xcconfig"; sourceTree = "<group>"; };
 		4F04CE951D231EA6003EE245 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		4F4547D91D242A7E00EFF576 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4FC6CCB31D211EDE00410829 /* SCVZ Canteen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCVZ Canteen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC6CCB61D211EDE00410829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FC6CCB81D211EDE00410829 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				4FC6CCB81D211EDE00410829 /* MenuViewController.swift */,
 				4FC6CCD31D212EE000410829 /* MenuTableViewCell.swift */,
+				4F4547D91D242A7E00EFF576 /* SettingsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				4FC6CCB71D211EDE00410829 /* AppDelegate.swift in Sources */,
 				4FFF79151D23EF0E00E011E5 /* CanteenStore.swift in Sources */,
 				4FC6CCD41D212EE000410829 /* MenuTableViewCell.swift in Sources */,
+				4F4547DA1D242A7E00EFF576 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

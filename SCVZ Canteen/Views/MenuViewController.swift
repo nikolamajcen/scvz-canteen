@@ -32,22 +32,13 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.menuTable.delegate = self
-        self.menuTable.dataSource = self
+        menuTable.delegate = self
+        menuTable.dataSource = self
         
-        self.initializeUI()
-        self.initializeControls()
+        initializeUI()
+        initializeControls()
         
-        self.canteenStore.fetchData { (result, error) in
-            if result != nil {
-                self.menus = result
-                self.selectedMenu = result.first
-                self.dateLabel.text = self.selectedMenu?.date
-                self.selectedMeals = self.selectedMenu?.lunch
-                self.menuTable.reloadData()
-                self.updateHeaderNavigation()
-            }
-        }
+        downloadMenus()
     }
     
     @IBAction func showPreviousDayMenu(sender: UIButton) {
@@ -76,6 +67,19 @@ class MenuViewController: UIViewController {
         changeSelectedMeals(sender)
     }
     
+    func downloadMenus() {
+        self.canteenStore.fetchData { (result, error) in
+            if result != nil {
+                self.menus = result
+                self.selectedMenu = result.first
+                self.dateLabel.text = self.selectedMenu?.date
+                self.selectedMeals = self.selectedMenu?.lunch
+                self.menuTable.reloadData()
+                self.updateHeaderNavigation()
+            }
+        }
+    }
+    
     private func initializeUI() {
         navigationController!.navigationBar.shadowImage = UIImage()
         navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
@@ -100,7 +104,7 @@ class MenuViewController: UIViewController {
         dateLabel.text = ""
         
         previousDayButton.hidden = true
-        nextDayButton.hidden = true
+        nextDayButton.hidden = true        
     }
     
     private func changeButtonImageTintColor(button: UIButton, color: UIColor) {

@@ -17,16 +17,16 @@
            {
            "icon": "Spaghetti",
            "title": "Menu 3",
-           "items": ["Juha od gljiva", "Paprikaš svinjski", "Tjestenina", "Salata od svježeg kupusa", "Puding ćokolada"]
+           "items": ["Juha od gljiva", "Paprikaš svinjski", "Tjestenina", "Salata od svježeg kupusa", "Puding čokolada"]
            },
            {
            "icon": "Broccoli",
-           "title": "Vegeterian",
+           "title": "Vegeterian menu",
            "items": ["Juha od gljiva", "Odrezak od soje", "Salata miješana sezonska", "Kolač"]
            },
            {
            "icon": "Fish",
-           "title": "Additional",
+           "title": "Additional meals",
            "items": ["Ljubljanski odrezak", "Pastrva sa žara"]
            }
            ],
@@ -48,12 +48,12 @@
             },
             {
             "icon": "Broccoli",
-            "title": "Vegeterian",
+            "title": "Vegeterian menu",
             "items": ["Šampinjoni zapečeni sa sirom", "Salata od rajčice", "Kolač"]
             },
             {
             "icon": "Steak",
-            "title": "Additional",
+            "title": "Additional meals",
             "items": ["Osječki odrezak", "Ćevapčići"]
             }
             ]
@@ -81,12 +81,12 @@
            },
            {
            "icon": "Broccoli",
-           "title": "Vegeterian",
+           "title": "Vegeterian menu",
            "items": ["Juha od cvjetače", "Okruglice od soje u umaku od rajčice", "Salata miješana sezonska", "Kolač"]
            },
            {
            "icon": "Steak",
-           "title": "Additional",
+           "title": "Additional meals",
            "items": ["Ljubljanski odrezak", "Škarpina sa žara"]
            }
            ],
@@ -108,12 +108,12 @@
             },
             {
             "icon": "Broccoli",
-            "title": "Vegeterian",
+            "title": "Vegeterian menu",
             "items": ["Kuhano povrće s bešamelom", "Njoki", "Salata od kiselih krastavaca", "Kolač"]
             },
             {
             "icon": "Steak",
-            "title": "Additional",
+            "title": "Additional meals",
             "items": ["Pureći bečki", "Kotlet u umaku od šampinjona"]
             }
             ]

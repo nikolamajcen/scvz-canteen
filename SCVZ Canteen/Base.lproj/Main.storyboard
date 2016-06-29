@@ -125,7 +125,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zty-CT-Nm3" userLabel="Description">
-                                                    <rect key="frame" x="110" y="48" width="472" height="43"/>
+                                                    <rect key="frame" x="110" y="48" width="472" height="54"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -138,7 +138,7 @@
                                                 <constraint firstItem="Zty-CT-Nm3" firstAttribute="leading" secondItem="vur-t5-Bni" secondAttribute="trailing" constant="12" id="PGf-VL-OcG"/>
                                                 <constraint firstItem="vur-t5-Bni" firstAttribute="top" secondItem="Brq-ED-TcL" secondAttribute="topMargin" constant="12" id="R7m-hO-OHN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Zty-CT-Nm3" secondAttribute="trailing" constant="10" id="Ymc-BD-ZI3"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Zty-CT-Nm3" secondAttribute="bottom" constant="21" id="bhh-bC-Fqj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Zty-CT-Nm3" secondAttribute="bottom" constant="10" id="bhh-bC-Fqj"/>
                                                 <constraint firstItem="7nQ-Pq-F9U" firstAttribute="top" secondItem="Brq-ED-TcL" secondAttribute="topMargin" constant="20" id="gcC-oR-4TD"/>
                                                 <constraint firstItem="Zty-CT-Nm3" firstAttribute="top" secondItem="7nQ-Pq-F9U" secondAttribute="bottom" id="lS1-2c-gd7"/>
                                             </constraints>
@@ -167,8 +167,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Student Canteen" id="QzN-jt-rPf">
-                        <barButtonItem key="leftBarButtonItem" image="Info" id="Nt0-p3-SpC" userLabel="Info"/>
-                        <barButtonItem key="rightBarButtonItem" image="Settings" id="fdb-58-JHU" userLabel="Settings"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="oep-S0-ohN"/>
+                        <barButtonItem key="rightBarButtonItem" image="Settings" id="fdb-58-JHU" userLabel="Settings">
+                            <connections>
+                                <segue destination="hau-B9-2Pk" kind="show" id="0Av-RZ-U1O"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="jhJ-p7-Xn8" id="0bX-h6-xUD"/>
@@ -184,6 +188,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1137" y="358"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="MGq-qR-dKi">
+            <objects>
+                <viewController id="hau-B9-2Pk" customClass="SettingsViewController" customModule="SCVZ_Canteen" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t7A-Op-XLr"/>
+                        <viewControllerLayoutGuide type="bottom" id="fxW-kv-bPr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dRl-Rs-tWT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UPp-Xz-enc">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsTableViewCell" id="yx7-ud-2so">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yx7-ud-2so" id="pnP-md-bpl">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UPp-Xz-enc" firstAttribute="top" secondItem="t7A-Op-XLr" secondAttribute="bottom" id="ChZ-Y7-dIn"/>
+                            <constraint firstItem="UPp-Xz-enc" firstAttribute="leading" secondItem="dRl-Rs-tWT" secondAttribute="leading" id="RRr-6z-qLA"/>
+                            <constraint firstItem="UPp-Xz-enc" firstAttribute="bottom" secondItem="fxW-kv-bPr" secondAttribute="top" id="p10-nf-NTa"/>
+                            <constraint firstAttribute="trailing" secondItem="UPp-Xz-enc" secondAttribute="trailing" id="y19-yE-D9c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="R7q-A7-Gkf"/>
+                    <connections>
+                        <outlet property="settingsTable" destination="UPp-Xz-enc" id="zEI-fG-LKT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RWi-Qg-2iM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1899" y="358"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HbP-rc-B7l">
@@ -201,11 +249,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9e-Gs-trp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="358"/>
+            <point key="canvasLocation" x="383" y="358"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Info" width="22" height="22"/>
         <image name="Next" width="40" height="40"/>
         <image name="Previous" width="40" height="40"/>
         <image name="Settings" width="22" height="22"/>
