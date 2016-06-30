@@ -35,15 +35,13 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = settingsTable.dequeueReusableCellWithIdentifier("SettingsTableViewCell")!
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("SettingsTableViewCell")!
         let sectionTitle = Array(settings.keys).sort()[indexPath.section]
         let settingTitle = settings[sectionTitle]![indexPath.row]
         
         cell.backgroundColor = UIColor.flatSandColorDark()
         cell.textLabel?.textColor = UIColor.flatCoffeeColorDark()
         cell.textLabel?.text = settingTitle
-        
         return cell
     }
     
@@ -63,5 +61,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let segueName = cell?.textLabel?.text
+        performSegueWithIdentifier(segueName!, sender: self)
     }
 }
