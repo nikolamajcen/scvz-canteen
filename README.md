@@ -4,7 +4,8 @@
 Status: In development :)
 
 # Screenshots
-<img src="https://github.com/nikolamajcen/scvz-canteen/blob/master/Screenshots/Main%20screen.png" width="800">
+##Main screen
+<img src="https://github.com/nikolamajcen/scvz-canteen/blob/master/Screenshots/Main%20screen.png" height="600">
 
 # Credits
 * Artwork
