@@ -101,10 +101,10 @@
 		4FC6CCC91D211F0300410829 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4F3D42C11D257B6F003C90FF /* CreditsViewController.swift */,
 				4FC6CCB81D211EDE00410829 /* MenuViewController.swift */,
 				4FC6CCD31D212EE000410829 /* MenuTableViewCell.swift */,
 				4F4547D91D242A7E00EFF576 /* SettingsViewController.swift */,
-				4F3D42C11D257B6F003C90FF /* CreditsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

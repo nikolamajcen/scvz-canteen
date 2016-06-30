@@ -38,8 +38,6 @@ class CreditsViewController: UIViewController {
     
     private func initializeUI() {
         creditsTable.tableFooterView = UIView()
-        creditsTable.backgroundColor = UIColor.flatSandColorDark()
-        creditsTable.separatorColor = UIColor.flatCoffeeColor()
     }
 }
 
@@ -50,11 +48,8 @@ extension CreditsViewController: UITableViewDelegate, UITableViewDataSource {
         let sectionTitle = Array(credits.keys).sort()[indexPath.section]
         let creditsValues = credits[sectionTitle]![indexPath.row]
                 
-        cell.backgroundColor = UIColor.flatSandColorDark()
         cell.textLabel?.text = creditsValues[0]
-        cell.textLabel?.textColor = UIColor.flatCoffeeColorDark()
         cell.detailTextLabel?.text = creditsValues[1]
-        cell.detailTextLabel?.textColor = UIColor.flatCoffeeColor()
         cell.accessibilityHint = creditsValues[2]
         return cell
     }

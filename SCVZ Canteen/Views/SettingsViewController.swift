@@ -27,8 +27,6 @@ class SettingsViewController: UIViewController {
     
     private func initializeUI() {
         settingsTable.tableFooterView = UIView()
-        settingsTable.backgroundColor = UIColor.flatSandColorDark()
-        settingsTable.separatorColor = UIColor.flatCoffeeColor()
     }
 }
 
@@ -39,8 +37,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         let sectionTitle = Array(settings.keys).sort()[indexPath.section]
         let settingTitle = settings[sectionTitle]![indexPath.row]
         
-        cell.backgroundColor = UIColor.flatSandColorDark()
-        cell.textLabel?.textColor = UIColor.flatCoffeeColorDark()
         cell.textLabel?.text = settingTitle
         return cell
     }

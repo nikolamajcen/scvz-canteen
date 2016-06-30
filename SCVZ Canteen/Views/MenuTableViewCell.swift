@@ -19,13 +19,6 @@ class MenuTableViewCell: UITableViewCell {
         self.mealImage.image = UIImage(named: meal.icon!.rawValue)
         self.mealTitle.text = meal.title
         self.mealDescription.text = meal.items!.joinWithSeparator(", ")
-        
         self.backgroundColor = UIColor(averageColorFromImage: self.mealImage.image)        
-        formatMealImage(self.mealImage)
-    }
-    
-    private func formatMealImage(image: UIImageView) {
-        image.clipsToBounds = true
-        image.layer.cornerRadius = image.bounds.height / 2
     }
 }

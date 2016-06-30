@@ -80,21 +80,9 @@ class MenuViewController: UIViewController {
         }
     }
     
-    private func initializeUI() {
-        navigationController!.navigationBar.shadowImage = UIImage()
-        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationController!.navigationBar.translucent = false
-        
-        navigationController?.navigationBar.barTintColor = UIColor.flatSandColorDark()
-        navigationController?.navigationBar.tintColor = UIColor.flatCoffeeColorDark()
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.flatCoffeeColorDark()]
-        
+    private func initializeUI() {        
         changeButtonImageTintColor(previousDayButton, color: UIColor.flatCoffeeColorDark())
         changeButtonImageTintColor(nextDayButton, color: UIColor.flatCoffeeColorDark())
-        
-        dateLabel.textColor = UIColor.flatCoffeeColorDark()
-        headerView.backgroundColor = UIColor.flatSandColorDark()
-        menuTable.backgroundColor = UIColor.flatCoffeeColor()
     }
     
     private func initializeControls() {
