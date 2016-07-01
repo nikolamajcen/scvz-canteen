@@ -16,8 +16,12 @@ class CanteenStore {
         let filePath = NSBundle.mainBundle().pathForResource("example", ofType: "json")
         let data = NSData(contentsOfFile: filePath!)
         let value = String(data: data!, encoding: NSUTF8StringEncoding)
-        
         let menus = Mapper<Menu>().mapArray(value!)
-        completion(menus, nil)
+        
+        // Mock delay
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            completion(menus, nil)
+        }
     }
 }

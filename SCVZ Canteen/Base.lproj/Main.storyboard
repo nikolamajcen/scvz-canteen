@@ -175,7 +175,7 @@
                             <color key="tintColor" red="0.4766090214" green="0.37373736499999999" blue="0.28653344510000001" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Settings" id="fdb-58-JHU" userLabel="Settings">
-                            <color key="tintColor" red="0.4766090214" green="0.37373736499999999" blue="0.28653344510000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.47843137254901957" green="0.37254901960784315" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="hau-B9-2Pk" kind="show" id="0Av-RZ-U1O"/>
                             </connections>

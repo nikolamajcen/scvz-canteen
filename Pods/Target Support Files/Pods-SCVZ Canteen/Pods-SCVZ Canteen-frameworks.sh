@@ -87,9 +87,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-SCVZ Canteen/Alamofire.framework"
   install_framework "Pods-SCVZ Canteen/ChameleonFramework.framework"
   install_framework "Pods-SCVZ Canteen/ObjectMapper.framework"
+  install_framework "Pods-SCVZ Canteen/StatefulViewController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-SCVZ Canteen/Alamofire.framework"
   install_framework "Pods-SCVZ Canteen/ChameleonFramework.framework"
   install_framework "Pods-SCVZ Canteen/ObjectMapper.framework"
+  install_framework "Pods-SCVZ Canteen/StatefulViewController.framework"
 fi

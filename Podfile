@@ -7,5 +7,6 @@ target 'SCVZ Canteen' do
   pod 'Alamofire', '~> 3.4'
   pod 'ChameleonFramework/Swift'
   pod 'ObjectMapper', '~> 1.3'
+  pod "StatefulViewController", "~> 1.0"
 end
 

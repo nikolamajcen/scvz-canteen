@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StatefulViewController
 
 class MenuViewController: UIViewController {
     
@@ -24,10 +25,10 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var menuTable: UITableView!
     
     var canteenStore = CanteenStore()
-    var menus = [Menu]()
     
+    var menus = [Menu]()
+    var selectedMeals: [Meal] = []
     var selectedMenu: Menu?
-    var selectedMeals: [Meal]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class MenuViewController: UIViewController {
         
         initializeUI()
         initializeControls()
+        initializeStateViews()
         
         downloadMenus()
     }
@@ -68,14 +70,18 @@ class MenuViewController: UIViewController {
     }
     
     func downloadMenus() {
+        startLoading()
         self.canteenStore.fetchData { (result, error) in
             if result != nil {
                 self.menus = result
                 self.selectedMenu = result.first
-                self.dateLabel.text = self.selectedMenu?.date
-                self.selectedMeals = self.selectedMenu?.lunch
+                self.dateLabel.text = self.selectedMenu!.date
+                self.selectedMeals = self.selectedMenu!.lunch!
                 self.menuTable.reloadData()
                 self.updateHeaderNavigation()
+                self.endLoading()
+            } else {
+                self.endLoading(true, error: error, completion: nil)
             }
         }
     }
@@ -116,17 +122,21 @@ class MenuViewController: UIViewController {
         switch button {
         case lunchButton:
             menuImage.image = UIImage(named: "Lunch")
-            selectedMeals = selectedMenu?.lunch
+            if selectedMenu?.lunch! != nil {
+                selectedMeals = selectedMenu!.lunch!
+            }
             break
         case dinnerButton:
             menuImage.image = UIImage(named: "Dinner")
-            selectedMeals = selectedMenu?.dinner
+            if selectedMenu?.dinner! != nil {
+                selectedMeals = selectedMenu!.dinner!
+            }
             break
         default:
             break
         }
         
-        if selectedMeals?.count > 0 {
+        if selectedMeals.count > 0 {
             menuTable.reloadData()
             menuTable.setContentOffset(CGPointZero, animated: true)
         }
@@ -151,9 +161,9 @@ class MenuViewController: UIViewController {
     
     private func updateTableContent() {
         if lunchButton.backgroundColor == UIColor.flatCoffeeColor() {
-            selectedMeals = selectedMenu?.lunch
+            selectedMeals = selectedMenu!.lunch!
         } else {
-            selectedMeals = selectedMenu?.dinner
+            selectedMeals = selectedMenu!.dinner!
         }
         menuTable.reloadData()
         menuTable.setContentOffset(CGPointZero, animated: true)
@@ -165,15 +175,28 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MenuTableViewCell",
                                                                forIndexPath: indexPath) as! MenuTableViewCell
-        cell.configureCell(selectedMeals![indexPath.row])
+        cell.configureCell(selectedMeals[indexPath.row])
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (selectedMeals?.count)!
+        return selectedMeals.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Nothing to do.
+    }
+}
+
+extension MenuViewController: StatefulViewController {
+    
+    private func initializeStateViews() {
+        errorView = ErrorView(owner: self, action: #selector(MenuViewController.downloadMenus))
+        emptyView = EmptyView()
+        loadingView = LoadingView()
+    }
+    
+    func hasContent() -> Bool {
+        return selectedMeals.count > 0
     }
 }
