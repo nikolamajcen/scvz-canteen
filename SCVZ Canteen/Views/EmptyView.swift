@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class EmptyView: StateView {
     
@@ -21,6 +22,9 @@ class EmptyView: StateView {
     init() {
         super.init(frame: CGRectZero)
         initializeNib(self, name: "EmptyView")
-        initializeView(self, view: contentView)        
+        initializeView(self, view: contentView)
+        
+        imageView.image = ImageHelper.imageWithoutTintColor(UIImage(named: "Empty")!)
+        imageView.tintColor = UIColor.flatCoffeeColorDark()
     }
 }

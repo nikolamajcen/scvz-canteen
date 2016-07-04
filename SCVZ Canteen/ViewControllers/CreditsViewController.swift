@@ -21,9 +21,15 @@ class CreditsViewController: UIViewController {
             ["Essential UI",
                 "Designed by Freepik and distributed by Flaticon",
                 "http://www.flaticon.com/packs/essential-ui"],
+            ["Minimal Universal Theme",
+                "Designed by Freepik and distributed by Flaticon",
+                "http://www.flaticon.com/packs/minimal-universal-theme"],
             ["Multimedia Collection",
                 "Designed by Gregor Cesnar and distributed by Flaticon",
-                "http://www.flaticon.com/packs/multimedia-collection"]
+                "http://www.flaticon.com/packs/multimedia-collection"],
+            ["Ventures",
+                "Designed by Freepeik and distributed by Flaticon",
+                "http://www.flaticon.com/packs/ventures"]
         ]
     ]
     

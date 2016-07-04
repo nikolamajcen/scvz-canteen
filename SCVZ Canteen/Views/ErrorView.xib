@@ -20,9 +20,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sWA-FN-D3A" userLabel="Image">
-                    <rect key="frame" x="260" y="193" width="80" height="80"/>
+                    <rect key="frame" x="270" y="213" width="60" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="Dbs-B5-I6J"/>
+                        <constraint firstAttribute="height" constant="60" id="Dbs-B5-I6J"/>
                         <constraint firstAttribute="width" secondItem="sWA-FN-D3A" secondAttribute="height" multiplier="1:1" id="dTX-hb-vP2"/>
                     </constraints>
                 </imageView>

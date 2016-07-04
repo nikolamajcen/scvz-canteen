@@ -81,7 +81,10 @@ class MenuViewController: UIViewController {
                 self.updateHeaderNavigation()
                 self.endLoading()
             } else {
+                // For empty state (error is nil)
                 self.endLoading(true, error: error, completion: nil)
+                // For error state
+                // self.endLoading(true, error: NSError(domain: "domain", code: 200, userInfo: nil) , completion: nil)
             }
         }
     }
@@ -102,9 +105,8 @@ class MenuViewController: UIViewController {
     }
     
     private func changeButtonImageTintColor(button: UIButton, color: UIColor) {
-        let originalImage = button.imageView?.image
-        let tintedImage = originalImage!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        button.setImage(tintedImage, forState: .Normal)
+        button.setImage(ImageHelper.imageWithoutTintColor((button.imageView?.image)!),
+                        forState: .Normal)
         button.tintColor = color
     }
     

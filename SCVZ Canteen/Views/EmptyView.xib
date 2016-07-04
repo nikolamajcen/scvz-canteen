@@ -18,16 +18,16 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-XX-UCa" userLabel="Message">
-                    <rect key="frame" x="268" y="289" width="65" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No menu information." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-XX-UCa" userLabel="Message">
+                    <rect key="frame" x="218" y="289" width="165" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.47843137250000001" green="0.37254901959999998" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I5g-lT-Zsh">
-                    <rect key="frame" x="260" y="201" width="80" height="80"/>
+                    <rect key="frame" x="270" y="213" width="60" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="AXc-o0-3cm"/>
+                        <constraint firstAttribute="height" constant="60" id="AXc-o0-3cm"/>
                         <constraint firstAttribute="width" secondItem="I5g-lT-Zsh" secondAttribute="height" multiplier="1:1" id="V7h-WR-KfV"/>
                     </constraints>
                 </imageView>
@@ -36,7 +36,7 @@
             <constraints>
                 <constraint firstItem="dhv-XX-UCa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0tH-BO-rAD"/>
                 <constraint firstItem="dhv-XX-UCa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Veg-MR-jda"/>
-                <constraint firstItem="dhv-XX-UCa" firstAttribute="top" secondItem="I5g-lT-Zsh" secondAttribute="bottom" constant="8" id="cMg-U2-Sfe"/>
+                <constraint firstItem="dhv-XX-UCa" firstAttribute="top" secondItem="I5g-lT-Zsh" secondAttribute="bottom" constant="16" id="cMg-U2-Sfe"/>
                 <constraint firstItem="I5g-lT-Zsh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wjV-bV-ycg"/>
             </constraints>
         </view>

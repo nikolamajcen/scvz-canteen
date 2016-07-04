@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class ErrorView: StateView {
     
@@ -23,6 +24,10 @@ class ErrorView: StateView {
         super.init(frame: CGRectZero)
         initializeNib(self, name: "ErrorView")
         initializeView(self, view: contentView)
+        
+        imageView.image = ImageHelper.imageWithoutTintColor(UIImage(named: "Error")!)
+        imageView.tintColor = UIColor.flatCoffeeColorDark()
+        
         refreshButton.addTarget(owner, action: action, forControlEvents: .TouchUpInside)
     }
 }

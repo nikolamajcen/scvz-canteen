@@ -17,6 +17,7 @@
 		4F0D4DB21D26CFD800810E7D /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0D4DB11D26CFD800810E7D /* ErrorView.swift */; };
 		4F3D42C21D257B6F003C90FF /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D42C11D257B6F003C90FF /* CreditsViewController.swift */; };
 		4F4547DA1D242A7E00EFF576 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4547D91D242A7E00EFF576 /* SettingsViewController.swift */; };
+		4F5C4A081D2B069300323FE6 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C4A071D2B069300323FE6 /* ImageHelper.swift */; };
 		4FC6CCB71D211EDE00410829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6CCB61D211EDE00410829 /* AppDelegate.swift */; };
 		4FC6CCB91D211EDE00410829 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6CCB81D211EDE00410829 /* MenuViewController.swift */; };
 		4FC6CCBC1D211EDE00410829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6CCBA1D211EDE00410829 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		4F0D4DB11D26CFD800810E7D /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4F3D42C11D257B6F003C90FF /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		4F4547D91D242A7E00EFF576 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4F5C4A071D2B069300323FE6 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		4FC6CCB31D211EDE00410829 /* SCVZ Canteen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCVZ Canteen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC6CCB61D211EDE00410829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FC6CCB81D211EDE00410829 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		4F5C4A061D2B066600323FE6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4F5C4A071D2B069300323FE6 /* ImageHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		4FC6CCAA1D211EDE00410829 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				4FC6CCC81D211EFC00410829 /* Application */,
+				4F5C4A061D2B066600323FE6 /* Helpers */,
 				4FC6CCCA1D2125F800410829 /* Models */,
 				4FFF79131D23EED000E011E5 /* Stores */,
 				4FC6CCC91D211F0300410829 /* ViewControllers */,
@@ -312,6 +323,7 @@
 				4FC6CCD41D212EE000410829 /* MenuTableViewCell.swift in Sources */,
 				4F0D4DB21D26CFD800810E7D /* ErrorView.swift in Sources */,
 				4F4547DA1D242A7E00EFF576 /* SettingsViewController.swift in Sources */,
+				4F5C4A081D2B069300323FE6 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
