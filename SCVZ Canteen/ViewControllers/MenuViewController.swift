@@ -71,7 +71,7 @@ class MenuViewController: UIViewController {
     
     func downloadMenus() {
         startLoading()
-        self.canteenStore.fetchData { (result, error) in
+        self.canteenStore.fetchMenus { (result, error) in
             if result != nil {
                 self.menus = result
                 self.selectedMenu = result.first
@@ -81,10 +81,7 @@ class MenuViewController: UIViewController {
                 self.updateHeaderNavigation()
                 self.endLoading()
             } else {
-                // For empty state (error is nil)
-                self.endLoading(true, error: error, completion: nil)
-                // For error state
-                // self.endLoading(true, error: NSError(domain: "domain", code: 200, userInfo: nil) , completion: nil)
+                self.endLoading(error: error)
             }
         }
     }

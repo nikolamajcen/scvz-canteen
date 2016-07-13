@@ -16,6 +16,8 @@
 		4F0D4DB01D26CFC600810E7D /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0D4DAF1D26CFC500810E7D /* ErrorView.xib */; };
 		4F0D4DB21D26CFD800810E7D /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0D4DB11D26CFD800810E7D /* ErrorView.swift */; };
 		4F3D42C21D257B6F003C90FF /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D42C11D257B6F003C90FF /* CreditsViewController.swift */; };
+		4F41AF521D367608002509C4 /* API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F41AF511D367608002509C4 /* API.plist */; };
+		4F41AF541D367653002509C4 /* CanteenConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F41AF531D367653002509C4 /* CanteenConstans.swift */; };
 		4F4547DA1D242A7E00EFF576 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4547D91D242A7E00EFF576 /* SettingsViewController.swift */; };
 		4F5C4A081D2B069300323FE6 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C4A071D2B069300323FE6 /* ImageHelper.swift */; };
 		4FC6CCB71D211EDE00410829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6CCB61D211EDE00410829 /* AppDelegate.swift */; };
@@ -26,13 +28,12 @@
 		4FC6CCCC1D21263B00410829 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6CCCB1D21263B00410829 /* Menu.swift */; };
 		4FC6CCD01D2127F100410829 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6CCCF1D2127F100410829 /* Meal.swift */; };
 		4FC6CCD41D212EE000410829 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6CCD31D212EE000410829 /* MenuTableViewCell.swift */; };
-		4FFF79121D23EE4000E011E5 /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFF79111D23EE4000E011E5 /* example.json */; };
 		4FFF79151D23EF0E00E011E5 /* CanteenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF79141D23EF0E00E011E5 /* CanteenStore.swift */; };
-		60764CF4BF5AC5FEEEC9684C /* Pods_SCVZ_Canteen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5937D70A7690B40E66924C /* Pods_SCVZ_Canteen.framework */; };
+		C45DAFABA7553A6E3FD72960 /* Pods_SCVZ_Canteen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12DFCFB3723B0DFD749B92C /* Pods_SCVZ_Canteen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4E3DF5A4FD66662296A5DFD1 /* Pods-SCVZ Canteen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCVZ Canteen.release.xcconfig"; path = "Pods/Target Support Files/Pods-SCVZ Canteen/Pods-SCVZ Canteen.release.xcconfig"; sourceTree = "<group>"; };
+		0580CD319060CDED9650A6F2 /* Pods-SCVZ Canteen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCVZ Canteen.release.xcconfig"; path = "Pods/Target Support Files/Pods-SCVZ Canteen/Pods-SCVZ Canteen.release.xcconfig"; sourceTree = "<group>"; };
 		4F04CE951D231EA6003EE245 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		4F0D4DA51D26BE8400810E7D /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F0D4DA71D26BE9700810E7D /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
@@ -42,6 +43,8 @@
 		4F0D4DAF1D26CFC500810E7D /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		4F0D4DB11D26CFD800810E7D /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4F3D42C11D257B6F003C90FF /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		4F41AF511D367608002509C4 /* API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API.plist; sourceTree = "<group>"; };
+		4F41AF531D367653002509C4 /* CanteenConstans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanteenConstans.swift; sourceTree = "<group>"; };
 		4F4547D91D242A7E00EFF576 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4F5C4A071D2B069300323FE6 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		4FC6CCB31D211EDE00410829 /* SCVZ Canteen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCVZ Canteen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,10 +57,9 @@
 		4FC6CCCB1D21263B00410829 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		4FC6CCCF1D2127F100410829 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		4FC6CCD31D212EE000410829 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
-		4FFF79111D23EE4000E011E5 /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
 		4FFF79141D23EF0E00E011E5 /* CanteenStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanteenStore.swift; sourceTree = "<group>"; };
-		6F5937D70A7690B40E66924C /* Pods_SCVZ_Canteen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCVZ_Canteen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4BFF18183897494534300E6 /* Pods-SCVZ Canteen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCVZ Canteen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SCVZ Canteen/Pods-SCVZ Canteen.debug.xcconfig"; sourceTree = "<group>"; };
+		C12DFCFB3723B0DFD749B92C /* Pods_SCVZ_Canteen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCVZ_Canteen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5F8E3A2E8EFB42E7ADA9A88 /* Pods-SCVZ Canteen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCVZ Canteen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SCVZ Canteen/Pods-SCVZ Canteen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +67,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60764CF4BF5AC5FEEEC9684C /* Pods_SCVZ_Canteen.framework in Frameworks */,
+				C45DAFABA7553A6E3FD72960 /* Pods_SCVZ_Canteen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		053C2137D4F8EE2CFA9F2B07 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5F8E3A2E8EFB42E7ADA9A88 /* Pods-SCVZ Canteen.debug.xcconfig */,
+				0580CD319060CDED9650A6F2 /* Pods-SCVZ Canteen.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4F0D4DA41D26BC0500810E7D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +111,8 @@
 			children = (
 				4FC6CCB51D211EDE00410829 /* SCVZ Canteen */,
 				4FC6CCB41D211EDE00410829 /* Products */,
-				C5B2C6435694C4E2FB6BBB66 /* Pods */,
-				B1666658FEB1BD583DEE6DCF /* Frameworks */,
+				053C2137D4F8EE2CFA9F2B07 /* Pods */,
+				7347239D9022FE7E02ACBF18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,7 +136,6 @@
 				4FC6CCBD1D211EDE00410829 /* Assets.xcassets */,
 				4FC6CCBA1D211EDE00410829 /* Main.storyboard */,
 				4FC6CCBF1D211EDE00410829 /* LaunchScreen.storyboard */,
-				4FFF79111D23EE4000E011E5 /* example.json */,
 			);
 			path = "SCVZ Canteen";
 			sourceTree = "<group>";
@@ -135,6 +145,7 @@
 			children = (
 				4FC6CCB61D211EDE00410829 /* AppDelegate.swift */,
 				4FC6CCC21D211EDE00410829 /* Info.plist */,
+				4F41AF511D367608002509C4 /* API.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -162,26 +173,18 @@
 		4FFF79131D23EED000E011E5 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				4F41AF531D367653002509C4 /* CanteenConstans.swift */,
 				4FFF79141D23EF0E00E011E5 /* CanteenStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
 		};
-		B1666658FEB1BD583DEE6DCF /* Frameworks */ = {
+		7347239D9022FE7E02ACBF18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6F5937D70A7690B40E66924C /* Pods_SCVZ_Canteen.framework */,
+				C12DFCFB3723B0DFD749B92C /* Pods_SCVZ_Canteen.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C5B2C6435694C4E2FB6BBB66 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F4BFF18183897494534300E6 /* Pods-SCVZ Canteen.debug.xcconfig */,
-				4E3DF5A4FD66662296A5DFD1 /* Pods-SCVZ Canteen.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,12 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FC6CCC51D211EDE00410829 /* Build configuration list for PBXNativeTarget "SCVZ Canteen" */;
 			buildPhases = (
-				E4346ABFFBE510352D5E2A7F /* Check Pods Manifest.lock */,
+				A11999953392AFFED86DF5ED /* [CP] Check Pods Manifest.lock */,
 				4FC6CCAF1D211EDE00410829 /* Sources */,
 				4FC6CCB01D211EDE00410829 /* Frameworks */,
 				4FC6CCB11D211EDE00410829 /* Resources */,
-				FD57EA5FE6D940CAF64FA4F2 /* Embed Pods Frameworks */,
-				AC5CA18D5EC2643009049FA5 /* Copy Pods Resources */,
+				CB1D2191FD18D3221C864C7F /* [CP] Embed Pods Frameworks */,
+				4D2DA61C1607A30D6E5CC6CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,11 +248,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FFF79121D23EE4000E011E5 /* example.json in Resources */,
 				4FC6CCC11D211EDE00410829 /* LaunchScreen.storyboard in Resources */,
 				4FC6CCBE1D211EDE00410829 /* Assets.xcassets in Resources */,
 				4FC6CCBC1D211EDE00410829 /* Main.storyboard in Resources */,
 				4F0D4DB01D26CFC600810E7D /* ErrorView.xib in Resources */,
+				4F41AF521D367608002509C4 /* API.plist in Resources */,
 				4F0D4DAE1D26C93B00810E7D /* EmptyView.xib in Resources */,
 				4F0D4DA81D26BE9700810E7D /* LoadingView.xib in Resources */,
 			);
@@ -258,14 +261,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AC5CA18D5EC2643009049FA5 /* Copy Pods Resources */ = {
+		4D2DA61C1607A30D6E5CC6CD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,14 +276,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SCVZ Canteen/Pods-SCVZ Canteen-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E4346ABFFBE510352D5E2A7F /* Check Pods Manifest.lock */ = {
+		A11999953392AFFED86DF5ED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,14 +291,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FD57EA5FE6D940CAF64FA4F2 /* Embed Pods Frameworks */ = {
+		CB1D2191FD18D3221C864C7F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +316,7 @@
 				4F04CE961D231EA6003EE245 /* Icon.swift in Sources */,
 				4FC6CCCC1D21263B00410829 /* Menu.swift in Sources */,
 				4FC6CCB91D211EDE00410829 /* MenuViewController.swift in Sources */,
+				4F41AF541D367653002509C4 /* CanteenConstans.swift in Sources */,
 				4F0D4DA61D26BE8400810E7D /* LoadingView.swift in Sources */,
 				4F0D4DAC1D26C92F00810E7D /* EmptyView.swift in Sources */,
 				4FC6CCD01D2127F100410829 /* Meal.swift in Sources */,
@@ -436,7 +440,7 @@
 		};
 		4FC6CCC61D211EDE00410829 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4BFF18183897494534300E6 /* Pods-SCVZ Canteen.debug.xcconfig */;
+			baseConfigurationReference = C5F8E3A2E8EFB42E7ADA9A88 /* Pods-SCVZ Canteen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/SCVZ Canteen/Application/Info.plist";
@@ -449,7 +453,7 @@
 		};
 		4FC6CCC71D211EDE00410829 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E3DF5A4FD66662296A5DFD1 /* Pods-SCVZ Canteen.release.xcconfig */;
+			baseConfigurationReference = 0580CD319060CDED9650A6F2 /* Pods-SCVZ Canteen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/SCVZ Canteen/Application/Info.plist";

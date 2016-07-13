@@ -10,18 +10,43 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-class CanteenStore {
+class CanteenStore: NSObject {
     
-    func fetchData(completion: ([Menu]!, NSError!) -> Void) -> Void {
-        let filePath = NSBundle.mainBundle().pathForResource("example", ofType: "json")
-        let data = NSData(contentsOfFile: filePath!)
-        let value = String(data: data!, encoding: NSUTF8StringEncoding)
-        let menus = Mapper<Menu>().mapArray(value!)
-        
-        // Mock delay
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            completion(menus, nil)
+    var alamofireManager: Alamofire.Manager?
+    
+    override init() {
+        super.init()
+        self.configurateRequestTimeout()
+    }
+    
+    func fetchMenus(completion: ([Menu]!, NSError!) -> Void) -> Void {
+        alamofireManager!
+            .request(.GET, CanteenContants.baseURL,
+                     parameters: ["id": CanteenContants.apiKey,
+                                  "lang": CanteenContants.languageEnglish])
+            .responseJSON { response in                
+                if response.response == nil {
+                    completion(nil,
+                        NSError(domain: "No network connection.",
+                            code: 0,
+                            userInfo: nil))
+                    return
+                }
+                
+                switch response.result {
+                case .Failure(let error):
+                    completion(nil, error)
+                    break
+                case .Success(let data):
+                    let menus = Mapper<Menu>().mapArray(data)
+                    completion(menus, nil)
+                }
         }
+    }
+    
+    private func configurateRequestTimeout() {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.timeoutIntervalForRequest = 5
+        self.alamofireManager = Alamofire.Manager(configuration: configuration)
     }
 }

@@ -21,7 +21,7 @@ class Menu: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         date <- map["date"]
-        lunch <- map["meals.lunch"]
-        dinner <- map["meals.dinner"]
+        lunch <- map["lunch"]
+        dinner <- map["dinner"]
     }
 }
