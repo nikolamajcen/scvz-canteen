@@ -3,6 +3,10 @@
 
 Status: In development :)
 
+### Make it work
+You need change file **API-SAMPLE.plist** (SCVZ Canteen/Application/API-SAMPLE.plist) to **API.plist**.
+Also, you need to make changes in this file; enter values for properties **baseURL** and **apiKey**.
+
 # Screenshots
 ##Main screen
 <img src="https://github.com/nikolamajcen/scvz-canteen/blob/master/Screenshots/Main%20screen.png" height="600">

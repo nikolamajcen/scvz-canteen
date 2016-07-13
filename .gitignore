@@ -200,4 +200,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # Custom files
-*API.plist
+/SCVZ\ Canteen/Application/API.plist
