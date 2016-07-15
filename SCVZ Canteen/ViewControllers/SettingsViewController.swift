@@ -21,12 +21,6 @@ class SettingsViewController: UIViewController {
         
         settingsTable.delegate = self
         settingsTable.dataSource = self
-        
-        initializeUI()
-    }
-    
-    private func initializeUI() {
-        settingsTable.tableFooterView = UIView()
     }
 }
 

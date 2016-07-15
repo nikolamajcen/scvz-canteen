@@ -38,12 +38,6 @@ class CreditsViewController: UIViewController {
         
         creditsTable.delegate = self
         creditsTable.dataSource = self
-        
-        initializeUI()
-    }
-    
-    private func initializeUI() {
-        creditsTable.tableFooterView = UIView()
     }
 }
 

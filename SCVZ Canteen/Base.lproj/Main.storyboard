@@ -214,6 +214,11 @@
                                 <color key="separatorColor" red="0.4766090214" green="0.37373736499999999" blue="0.28653344510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexColor" red="0.4766090214" green="0.37373736499999999" blue="0.28653344510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.83921568629999999" green="0.76470588240000004" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="uxf-wi-o1a" userLabel="Footer">
+                                    <rect key="frame" x="0.0" y="136" width="600" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.83921568629999999" green="0.76470588240000004" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsTableViewCell" textLabel="9Se-GA-WeQ" style="IBUITableViewCellStyleDefault" id="yx7-ud-2so">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
@@ -277,6 +282,11 @@
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.76470588240000004" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.4766090214" green="0.37373736499999999" blue="0.28653344510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.83921568629999999" green="0.76470588240000004" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="6Ht-O1-7lg" userLabel="Footer">
+                                    <rect key="frame" x="0.0" y="136" width="600" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.83921568629999999" green="0.76470588240000004" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreditsTableViewCell" textLabel="VTo-so-Lkt" detailTextLabel="10n-uF-cGv" style="IBUITableViewCellStyleSubtitle" id="C5Y-zk-i2L">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
@@ -300,6 +310,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="tintColor" red="0.47843137254901957" green="0.37254901960784315" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.83921568629999999" green="0.76470588240000004" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="0.4766090214" green="0.37373736499999999" blue="0.28653344510000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -341,31 +352,39 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCVZ Canteen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZx-6Q-dNX" userLabel="Application Title">
                                         <rect key="frame" x="0.0" y="29" width="300" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.47660902142524719" green="0.37373736500740051" blue="0.28653344511985779" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unofficial application" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sr4-3S-PAL" userLabel="Application Subtitle">
-                                        <rect key="frame" x="0.0" y="58" width="300" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="0.0" y="58" width="300" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.47660902142524719" green="0.37373736500740051" blue="0.28653344511985779" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eix-SZ-wjg" userLabel="Author Title">
-                                        <rect key="frame" x="0.0" y="159" width="300" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="138" width="300" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.47660902142524719" green="0.37373736500740051" blue="0.28653344511985779" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nikola Majcen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sO-pn-XEA" userLabel="Author Name">
-                                        <rect key="frame" x="0.0" y="188" width="300" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="0.0" y="168" width="300" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.47660902142524719" green="0.37373736500740051" blue="0.28653344511985779" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Author Logo" translatesAutoresizingMaskIntoConstraints="NO" id="wMU-VX-0Ml">
+                                        <rect key="frame" x="120" y="204" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="1Fb-9c-Pnp"/>
+                                            <constraint firstAttribute="width" secondItem="wMU-VX-0Ml" secondAttribute="height" multiplier="1:1" id="u2Y-03-S67"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83921568627450982" green="0.76470588235294112" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="wMU-VX-0Ml" firstAttribute="centerX" secondItem="K9b-hg-LvZ" secondAttribute="centerX" id="315-6D-ELo"/>
                                     <constraint firstAttribute="trailing" secondItem="Eix-SZ-wjg" secondAttribute="trailing" id="6Si-Vy-mVI"/>
                                     <constraint firstItem="Eix-SZ-wjg" firstAttribute="leading" secondItem="K9b-hg-LvZ" secondAttribute="leading" id="A5q-E8-5Bh"/>
                                     <constraint firstItem="Eix-SZ-wjg" firstAttribute="centerX" secondItem="K9b-hg-LvZ" secondAttribute="centerX" id="Dlb-mF-GgK"/>
@@ -375,13 +394,14 @@
                                     <constraint firstItem="9sO-pn-XEA" firstAttribute="top" secondItem="Eix-SZ-wjg" secondAttribute="bottom" constant="8" id="LHW-Kn-Gv2"/>
                                     <constraint firstAttribute="trailing" secondItem="sr4-3S-PAL" secondAttribute="trailing" id="N5C-Q9-2On"/>
                                     <constraint firstItem="9sO-pn-XEA" firstAttribute="leading" secondItem="K9b-hg-LvZ" secondAttribute="leading" id="NbP-JV-Oze"/>
+                                    <constraint firstItem="wMU-VX-0Ml" firstAttribute="top" secondItem="9sO-pn-XEA" secondAttribute="bottom" constant="16" id="R4e-CG-bfB"/>
                                     <constraint firstItem="9sO-pn-XEA" firstAttribute="centerX" secondItem="K9b-hg-LvZ" secondAttribute="centerX" id="XKj-SS-Bwk"/>
                                     <constraint firstItem="sr4-3S-PAL" firstAttribute="top" secondItem="HZx-6Q-dNX" secondAttribute="bottom" constant="8" id="mCb-CG-Cx8"/>
                                     <constraint firstAttribute="trailing" secondItem="HZx-6Q-dNX" secondAttribute="trailing" id="nJr-5f-tL5"/>
                                     <constraint firstAttribute="width" secondItem="K9b-hg-LvZ" secondAttribute="height" multiplier="1:1" id="p4a-cP-f9i"/>
                                     <constraint firstItem="HZx-6Q-dNX" firstAttribute="leading" secondItem="K9b-hg-LvZ" secondAttribute="leading" id="pup-Ex-G05"/>
                                     <constraint firstItem="sr4-3S-PAL" firstAttribute="leading" secondItem="K9b-hg-LvZ" secondAttribute="leading" id="rNt-VM-iwn"/>
-                                    <constraint firstItem="Eix-SZ-wjg" firstAttribute="top" secondItem="sr4-3S-PAL" secondAttribute="bottom" constant="84" id="rsS-cF-SVK"/>
+                                    <constraint firstItem="Eix-SZ-wjg" firstAttribute="top" secondItem="sr4-3S-PAL" secondAttribute="bottom" constant="60" id="rsS-cF-SVK"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -423,6 +443,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Author Logo" width="80" height="80"/>
         <image name="Next" width="40" height="40"/>
         <image name="Previous" width="40" height="40"/>
         <image name="Settings" width="22" height="22"/>
