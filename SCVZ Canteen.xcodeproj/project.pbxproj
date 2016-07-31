@@ -444,7 +444,7 @@
 			baseConfigurationReference = C5F8E3A2E8EFB42E7ADA9A88 /* Pods-SCVZ Canteen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/SCVZ Canteen/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -460,7 +460,7 @@
 			baseConfigurationReference = 0580CD319060CDED9650A6F2 /* Pods-SCVZ Canteen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/SCVZ Canteen/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

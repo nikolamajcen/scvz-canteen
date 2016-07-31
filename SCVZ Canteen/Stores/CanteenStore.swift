@@ -16,7 +16,7 @@ class CanteenStore: NSObject {
     
     override init() {
         super.init()
-        self.configurateRequestTimeout()
+        configurateRequestTimeout()
     }
     
     func fetchMenus(completion: ([Menu]!, NSError!) -> Void) -> Void {

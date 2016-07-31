@@ -14,17 +14,20 @@ class EmptyView: StateView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var refreshButton: UIButton!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    init() {
+    init(owner: UIViewController, action: Selector) {
         super.init(frame: CGRectZero)
         initializeNib(self, name: "EmptyView")
         initializeView(self, view: contentView)
         
         imageView.image = ImageHelper.imageWithoutTintColor(UIImage(named: "Empty")!)
         imageView.tintColor = UIColor.flatCoffeeColorDark()
+        
+        refreshButton.addTarget(owner, action: action, forControlEvents: .TouchUpInside)
     }
 }

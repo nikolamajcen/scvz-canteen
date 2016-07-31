@@ -15,10 +15,12 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var mealTitle: UILabel!
     @IBOutlet weak var mealDescription: UITextView!
     
-    func configureCell(meal: Meal) {
-        self.mealImage.image = UIImage(named: meal.icon!.rawValue)
-        self.mealTitle.text = meal.title
-        self.mealDescription.text = meal.items!.joinWithSeparator(", ")
-        self.backgroundColor = UIColor(averageColorFromImage: self.mealImage.image)        
+    var meal: Meal? {
+        didSet {
+            mealTitle.text = meal!.title
+            mealDescription.text = meal!.items!.joinWithSeparator(", ")
+            mealImage.image = UIImage(named: meal!.icon!.rawValue)
+            backgroundColor = UIColor(averageColorFromImage: mealImage.image)
+        }
     }
 }

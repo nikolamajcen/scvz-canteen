@@ -86,7 +86,7 @@ class MenuViewController: UIViewController {
         }
     }
     
-    private func initializeUI() {        
+    private func initializeUI() {
         changeButtonImageTintColor(previousDayButton, color: UIColor.flatCoffeeColorDark())
         changeButtonImageTintColor(nextDayButton, color: UIColor.flatCoffeeColorDark())
     }
@@ -174,7 +174,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MenuTableViewCell",
                                                                forIndexPath: indexPath) as! MenuTableViewCell
-        cell.configureCell(selectedMeals[indexPath.row])
+        cell.meal = selectedMeals[indexPath.row]
         return cell
     }
     
@@ -191,7 +191,7 @@ extension MenuViewController: StatefulViewController {
     
     private func initializeStateViews() {
         errorView = ErrorView(owner: self, action: #selector(MenuViewController.downloadMenus))
-        emptyView = EmptyView()
+        emptyView = EmptyView(owner: self, action: #selector(MenuViewController.downloadMenus))
         loadingView = LoadingView()
     }
     
