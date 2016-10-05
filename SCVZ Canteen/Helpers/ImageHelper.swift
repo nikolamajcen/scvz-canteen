@@ -10,7 +10,7 @@ import UIKit
 
 class ImageHelper {
     
-    static func imageWithoutTintColor(image: UIImage) -> UIImage {
-        return image.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+    static func imageWithoutTintColor(_ image: UIImage) -> UIImage {
+        return image.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
     }
 }

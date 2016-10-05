@@ -26,33 +26,33 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SettingsTableViewCell")!
-        let sectionTitle = Array(settings.keys).sort()[indexPath.section]
-        let settingTitle = settings[sectionTitle]![indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell")!
+        let sectionTitle = Array(settings.keys).sorted()[(indexPath as NSIndexPath).section]
+        let settingTitle = settings[sectionTitle]![(indexPath as NSIndexPath).row]
         
         cell.textLabel?.text = settingTitle
         return cell
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let sectionNames = Array(settings.keys).sort()
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionNames = Array(settings.keys).sorted()
         return sectionNames[section]
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return settings.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionName = Array(settings.keys).sort()[section]
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let sectionName = Array(settings.keys).sorted()[section]
         return (settings[sectionName]?.count)!
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let cell = tableView.cellForRow(at: indexPath)
         let segueName = cell?.textLabel?.text
-        performSegueWithIdentifier(segueName!, sender: self)
+        performSegue(withIdentifier: segueName!, sender: self)
     }
 }

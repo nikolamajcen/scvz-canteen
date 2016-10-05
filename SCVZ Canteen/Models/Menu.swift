@@ -18,7 +18,7 @@ class Menu: Mappable {
     
     required init?(_ map: Map) { }
     
-    func mapping(map: Map) {
+    func mapping(_ map: Map) {
         id <- map["id"]
         date <- map["date"]
         lunch <- map["lunch"]

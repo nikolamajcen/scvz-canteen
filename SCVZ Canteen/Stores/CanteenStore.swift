@@ -19,7 +19,7 @@ class CanteenStore: NSObject {
         configurateRequestTimeout()
     }
     
-    func fetchMenus(completion: ([Menu]!, NSError!) -> Void) -> Void {
+    func fetchMenus(_ completion: @escaping ([Menu]?, NSError?) -> Void) -> Void {
         alamofireManager!
             .request(.GET, CanteenContants.baseURL,
                      parameters: ["id": CanteenContants.apiKey,
@@ -44,8 +44,8 @@ class CanteenStore: NSObject {
         }
     }
     
-    private func configurateRequestTimeout() {
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+    fileprivate func configurateRequestTimeout() {
+        let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 5
         self.alamofireManager = Alamofire.Manager(configuration: configuration)
     }

@@ -13,9 +13,9 @@ class CanteenContants {
     static let languageEnglish = "en"
     static let languageCroatian = "hr"
     
-    static var baseURL: NSURL {
+    static var baseURL: URL {
         get {
-            return NSURL(string: readConfigurationValue("baseURL", file: "API", type: "plist"))!
+            return URL(string: readConfigurationValue("baseURL", file: "API", type: "plist"))!
         }
     }
     
@@ -25,11 +25,11 @@ class CanteenContants {
         }
     }
     
-    private static func readConfigurationValue(key: String, file: String, type: String) -> String! {
+    fileprivate static func readConfigurationValue(_ key: String, file: String, type: String) -> String! {
         let dictionary: NSDictionary?
-        if let path = NSBundle.mainBundle().pathForResource(file, ofType: type) {
-            dictionary = NSDictionary(contentsOfFile: path) as! [String: AnyObject]
-            return (dictionary!.valueForKey(key))! as! String
+        if let path = Bundle.main.path(forResource: file, ofType: type) {
+            dictionary = NSDictionary(contentsOfFile: path) as! [String: AnyObject] as NSDictionary?
+            return (dictionary!.value(forKey: key))! as! String
         }
         return String()
     }

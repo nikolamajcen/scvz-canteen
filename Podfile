@@ -5,9 +5,10 @@ use_frameworks!
 
 target 'SCVZ Canteen' do
   pod 'Alamofire', '~> 4.0'
-  pod 'ChameleonFramework', 
-    :git => 'https://github.com/ViccAlexander/Chameleon.git', :branch => 'swift3'
+  pod 'ChameleonFramework' 
   pod 'ObjectMapper', '~> 2.0'
-  pod "StatefulViewController", "~> 1.0"
+  pod "StatefulViewController",
+    :git => 'https://github.com/aschuch/StatefulViewController.git', 
+      :branch => 'swift3.0'
 end
 
