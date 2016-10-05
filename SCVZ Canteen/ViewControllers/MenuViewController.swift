@@ -8,26 +8,6 @@
 
 import UIKit
 import StatefulViewController
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
-
-fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
-}
-
 
 class MenuViewController: UIViewController {
     
@@ -64,16 +44,16 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func showPreviousDayMenu(_ sender: UIButton) {
-        if selectedMenu!.id > 0 {
-            selectedMenu = menus[(selectedMenu?.id)! - 1]
+        if selectedMenu!.id! > 0 {
+            selectedMenu = menus[(selectedMenu?.id)! - 2]
             updateHeaderNavigation()
             updateTableContent()
         }
     }
     
     @IBAction func showNextDayMenu(_ sender: UIButton) {
-        if selectedMenu!.id < menus.count {
-            selectedMenu = menus[(selectedMenu?.id)! + 1]
+        if selectedMenu!.id! <= menus.count {
+            selectedMenu = menus[(selectedMenu?.id!)!]
             updateHeaderNavigation()
             updateTableContent()
         }
@@ -118,7 +98,7 @@ class MenuViewController: UIViewController {
         dateLabel.text = ""
         
         previousDayButton.isHidden = true
-        nextDayButton.isHidden = true        
+        nextDayButton.isHidden = true
     }
     
     fileprivate func changeButtonImageTintColor(_ button: UIButton, color: UIColor) {
@@ -174,7 +154,7 @@ class MenuViewController: UIViewController {
             nextDayButton.isHidden = false
         } else {
             previousDayButton.isHidden = false
-            nextDayButton.isHidden = selectedMenu?.id == (menus.count - 1)
+            nextDayButton.isHidden = selectedMenu?.id == menus.count
         }
     }
     
@@ -193,7 +173,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell",
-                                                               for: indexPath) as! MenuTableViewCell
+                                                 for: indexPath) as! MenuTableViewCell
         cell.meal = selectedMeals[(indexPath as NSIndexPath).row]
         return cell
     }
