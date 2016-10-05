@@ -21,13 +21,13 @@ class ErrorView: StateView {
     }
     
     init(owner: UIViewController, action: Selector) {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         initializeNib(self, name: "ErrorView")
         initializeView(self, view: contentView)
         
         imageView.image = ImageHelper.imageWithoutTintColor(UIImage(named: "Error")!)
         imageView.tintColor = UIColor.flatCoffeeColorDark()
         
-        refreshButton.addTarget(owner, action: action, forControlEvents: .TouchUpInside)
+        refreshButton.addTarget(owner, action: action, for: .touchUpInside)
     }
 }

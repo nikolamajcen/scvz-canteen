@@ -12,19 +12,21 @@ import ObjectMapper
 
 class CanteenStore: NSObject {
     
-    var alamofireManager: Alamofire.Manager?
+    var alamofireManager: Alamofire.SessionManager?
     
     override init() {
         super.init()
         configurateRequestTimeout()
     }
     
-    func fetchMenus(completion: ([Menu]!, NSError!) -> Void) -> Void {
-        alamofireManager!
-            .request(.GET, CanteenContants.baseURL,
-                     parameters: ["id": CanteenContants.apiKey,
-                                  "lang": CanteenContants.languageEnglish])
-            .responseJSON { response in                
+    func fetchMenus(_ completion: @escaping ([Menu]?, NSError?) -> Void) -> Void {
+        // alamofireManager!
+        Alamofire
+            .request(CanteenContants.baseURL,
+                     method: .get,
+                     parameters: ["id": CanteenContants.apiKey, "lang": CanteenContants.languageEnglish],
+                     encoding: URLEncoding.default)
+            .responseJSON { response in
                 if response.response == nil {
                     completion(nil,
                         NSError(domain: "No network connection.",
@@ -34,19 +36,19 @@ class CanteenStore: NSObject {
                 }
                 
                 switch response.result {
-                case .Failure(let error):
-                    completion(nil, error)
+                case .failure(let error):
+                    completion(nil, error as NSError?)
                     break
-                case .Success(let data):
-                    let menus = Mapper<Menu>().mapArray(data)
+                case .success(let data):
+                    let menus = Mapper<Menu>().mapArray(JSONObject: data)
                     completion(menus, nil)
                 }
         }
     }
     
-    private func configurateRequestTimeout() {
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+    fileprivate func configurateRequestTimeout() {
+        let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 5
-        self.alamofireManager = Alamofire.Manager(configuration: configuration)
+        // self.alamofireManager = Alamofire.Manager(configuration: configuration)
     }
 }

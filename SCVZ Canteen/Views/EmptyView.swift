@@ -21,13 +21,13 @@ class EmptyView: StateView {
     }
     
     init(owner: UIViewController, action: Selector) {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         initializeNib(self, name: "EmptyView")
         initializeView(self, view: contentView)
         
         imageView.image = ImageHelper.imageWithoutTintColor(UIImage(named: "Empty")!)
         imageView.tintColor = UIColor.flatCoffeeColorDark()
         
-        refreshButton.addTarget(owner, action: action, forControlEvents: .TouchUpInside)
+        refreshButton.addTarget(owner, action: action, for: .touchUpInside)
     }
 }

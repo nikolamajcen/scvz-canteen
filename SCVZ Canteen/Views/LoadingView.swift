@@ -18,7 +18,7 @@ class LoadingView: StateView {
     }
     
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         initializeNib(self, name: "LoadingView")
         initializeView(self, view: contentView)
         loadingIndicator.startAnimating()

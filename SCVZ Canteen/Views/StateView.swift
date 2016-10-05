@@ -10,11 +10,11 @@ import UIKit
 
 class StateView: UIView {
 
-    func initializeNib(owner: UIView, name: String) {
-        NSBundle.mainBundle().loadNibNamed(name, owner: owner, options: nil)
+    func initializeNib(_ owner: UIView, name: String) {
+        Bundle.main.loadNibNamed(name, owner: owner, options: nil)
     }
     
-    func initializeView(container: UIView, view: UIView) {
+    func initializeView(_ container: UIView, view: UIView) {
         view.frame = container.bounds
         container.addSubview(view)
     }

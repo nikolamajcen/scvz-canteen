@@ -18,9 +18,9 @@ class MenuTableViewCell: UITableViewCell {
     var meal: Meal? {
         didSet {
             mealTitle.text = meal!.title
-            mealDescription.text = meal!.items!.joinWithSeparator(", ")
+            mealDescription.text = meal!.items!.joined(separator: ", ")
             mealImage.image = UIImage(named: meal!.icon!.rawValue)
-            backgroundColor = UIColor(averageColorFromImage: mealImage.image)
+            backgroundColor = UIColor(averageColorFrom: mealImage.image)
         }
     }
 }

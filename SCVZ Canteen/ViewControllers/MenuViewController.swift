@@ -8,6 +8,26 @@
 
 import UIKit
 import StatefulViewController
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class MenuViewController: UIViewController {
     
@@ -43,7 +63,7 @@ class MenuViewController: UIViewController {
         downloadMenus()
     }
     
-    @IBAction func showPreviousDayMenu(sender: UIButton) {
+    @IBAction func showPreviousDayMenu(_ sender: UIButton) {
         if selectedMenu!.id > 0 {
             selectedMenu = menus[(selectedMenu?.id)! - 1]
             updateHeaderNavigation()
@@ -51,7 +71,7 @@ class MenuViewController: UIViewController {
         }
     }
     
-    @IBAction func showNextDayMenu(sender: UIButton) {
+    @IBAction func showNextDayMenu(_ sender: UIButton) {
         if selectedMenu!.id < menus.count {
             selectedMenu = menus[(selectedMenu?.id)! + 1]
             updateHeaderNavigation()
@@ -59,12 +79,12 @@ class MenuViewController: UIViewController {
         }
     }
     
-    @IBAction func showLunchMenu(sender: UIButton) {
+    @IBAction func showLunchMenu(_ sender: UIButton) {
         changeButtonFocus(sender)
         changeSelectedMeals(sender)
     }
     
-    @IBAction func showDinnerMenu(sender: UIButton) {
+    @IBAction func showDinnerMenu(_ sender: UIButton) {
         changeButtonFocus(sender)
         changeSelectedMeals(sender)
     }
@@ -73,8 +93,8 @@ class MenuViewController: UIViewController {
         startLoading()
         self.canteenStore.fetchMenus { (result, error) in
             if result != nil {
-                self.menus = result
-                self.selectedMenu = result.first
+                self.menus = result!
+                self.selectedMenu = result?.first
                 self.dateLabel.text = self.selectedMenu!.date
                 self.selectedMeals = self.selectedMenu!.lunch!
                 self.menuTable.reloadData()
@@ -86,38 +106,38 @@ class MenuViewController: UIViewController {
         }
     }
     
-    private func initializeUI() {
+    fileprivate func initializeUI() {
         changeButtonImageTintColor(previousDayButton, color: UIColor.flatCoffeeColorDark())
         changeButtonImageTintColor(nextDayButton, color: UIColor.flatCoffeeColorDark())
     }
     
-    private func initializeControls() {
+    fileprivate func initializeControls() {
         changeButtonFocus(lunchButton)
         changeSelectedMeals(lunchButton)
         
         dateLabel.text = ""
         
-        previousDayButton.hidden = true
-        nextDayButton.hidden = true        
+        previousDayButton.isHidden = true
+        nextDayButton.isHidden = true        
     }
     
-    private func changeButtonImageTintColor(button: UIButton, color: UIColor) {
+    fileprivate func changeButtonImageTintColor(_ button: UIButton, color: UIColor) {
         button.setImage(ImageHelper.imageWithoutTintColor((button.imageView?.image)!),
-                        forState: .Normal)
+                        for: UIControlState())
         button.tintColor = color
     }
     
-    private func changeButtonFocus(button: UIButton) {
-        if button.backgroundColor == UIColor.flatCoffeeColor() {
+    fileprivate func changeButtonFocus(_ button: UIButton) {
+        if button.backgroundColor == UIColor.flatCoffee() {
             return
         }
         
         lunchButton.backgroundColor = UIColor.flatCoffeeColorDark()
         dinnerButton.backgroundColor = UIColor.flatCoffeeColorDark()
-        button.backgroundColor = UIColor.flatCoffeeColor()
+        button.backgroundColor = UIColor.flatCoffee()
     }
     
-    private func changeSelectedMeals(button: UIButton) {
+    fileprivate func changeSelectedMeals(_ button: UIButton) {
         switch button {
         case lunchButton:
             menuImage.image = UIImage(named: "Lunch")
@@ -137,59 +157,59 @@ class MenuViewController: UIViewController {
         
         if selectedMeals.count > 0 {
             menuTable.reloadData()
-            menuTable.setContentOffset(CGPointZero, animated: true)
+            menuTable.setContentOffset(CGPoint.zero, animated: true)
         }
     }
     
-    private func updateHeaderNavigation() {
+    fileprivate func updateHeaderNavigation() {
         dateLabel.text = selectedMenu?.date
         if menus.count <= 1 {
-            previousDayButton.hidden = true
-            nextDayButton.hidden = true
+            previousDayButton.isHidden = true
+            nextDayButton.isHidden = true
             return
         }
         
         if menus.first?.id == selectedMenu?.id {
-            previousDayButton.hidden = true
-            nextDayButton.hidden = false
+            previousDayButton.isHidden = true
+            nextDayButton.isHidden = false
         } else {
-            previousDayButton.hidden = false
-            nextDayButton.hidden = selectedMenu?.id == (menus.count - 1)
+            previousDayButton.isHidden = false
+            nextDayButton.isHidden = selectedMenu?.id == (menus.count - 1)
         }
     }
     
-    private func updateTableContent() {
-        if lunchButton.backgroundColor == UIColor.flatCoffeeColor() {
+    fileprivate func updateTableContent() {
+        if lunchButton.backgroundColor == UIColor.flatCoffee() {
             selectedMeals = selectedMenu!.lunch!
         } else {
             selectedMeals = selectedMenu!.dinner!
         }
         menuTable.reloadData()
-        menuTable.setContentOffset(CGPointZero, animated: true)
+        menuTable.setContentOffset(CGPoint.zero, animated: true)
     }
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MenuTableViewCell",
-                                                               forIndexPath: indexPath) as! MenuTableViewCell
-        cell.meal = selectedMeals[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell",
+                                                               for: indexPath) as! MenuTableViewCell
+        cell.meal = selectedMeals[(indexPath as NSIndexPath).row]
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedMeals.count
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Nothing to do.
     }
 }
 
 extension MenuViewController: StatefulViewController {
     
-    private func initializeStateViews() {
+    fileprivate func initializeStateViews() {
         errorView = ErrorView(owner: self, action: #selector(MenuViewController.downloadMenus))
         emptyView = EmptyView(owner: self, action: #selector(MenuViewController.downloadMenus))
         loadingView = LoadingView()

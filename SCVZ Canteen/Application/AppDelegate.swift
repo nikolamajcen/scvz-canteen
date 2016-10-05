@@ -13,11 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let navigationController = window?.rootViewController as! UINavigationController
-        navigationController.navigationBar.translucent = false
+        navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.shadowImage = UIImage()
-        navigationController.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         return true
     }
 }
