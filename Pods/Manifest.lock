@@ -1,23 +1,33 @@
 PODS:
-  - Alamofire (3.4.1)
+  - Alamofire (4.0.1)
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
-  - ChameleonFramework/Swift (2.1.0):
-    - ChameleonFramework/Default
-  - ObjectMapper (1.3.0)
-  - StatefulViewController (1.1)
+  - ObjectMapper (2.0.0)
+  - StatefulViewController (1.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.4)
-  - ChameleonFramework/Swift
-  - ObjectMapper (~> 1.3)
+  - Alamofire (~> 4.0)
+  - ChameleonFramework (from `https://github.com/ViccAlexander/Chameleon.git`, branch `swift3`)
+  - ObjectMapper (~> 2.0)
   - StatefulViewController (~> 1.0)
 
-SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
-  StatefulViewController: 396f6d25676680a5c0503143cca55be23ab8c362
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :branch: swift3
+    :git: https://github.com/ViccAlexander/Chameleon.git
 
-PODFILE CHECKSUM: 6ef41a6647f7ac5f7cb437c74f71f56d61b5c98a
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: c400c32eead1c6e74008983c3e7c845ae069b41d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
+  StatefulViewController: 58a8134ea4a2f43504a9671700385f699450d018
+
+PODFILE CHECKSUM: 1219baf81fb0f72d0946176ceac759a3a52ef5a2
 
 COCOAPODS: 1.0.1
