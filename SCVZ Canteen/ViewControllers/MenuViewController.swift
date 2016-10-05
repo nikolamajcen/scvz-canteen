@@ -93,8 +93,8 @@ class MenuViewController: UIViewController {
         startLoading()
         self.canteenStore.fetchMenus { (result, error) in
             if result != nil {
-                self.menus = result
-                self.selectedMenu = result.first
+                self.menus = result!
+                self.selectedMenu = result?.first
                 self.dateLabel.text = self.selectedMenu!.date
                 self.selectedMeals = self.selectedMenu!.lunch!
                 self.menuTable.reloadData()
